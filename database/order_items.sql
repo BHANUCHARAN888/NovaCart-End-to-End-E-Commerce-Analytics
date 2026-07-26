@@ -1,7 +1,8 @@
+desc order_items;
 -- ============================== Checking changes 
 SET SQL_SAFE_UPDATES = 0;
-DELETE FROM products;
+DELETE FROM order_items;
 
-ALTER TABLE products AUTO_INCREMENT = 1;
-select count(*) from products;
+ALTER TABLE order_items AUTO_INCREMENT = 1;
+select count(*) from order_items;
 -- ============================== Checking changes
