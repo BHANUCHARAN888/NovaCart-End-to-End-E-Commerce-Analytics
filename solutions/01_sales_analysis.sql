@@ -58,3 +58,16 @@ where payment_status = "Success"
 group by date_format(o.order_date,"%Y-%m")
 order by Revenue asc
 limit 1 ;
+-- Business Q3: Which product categories contribute the most to overall revenue?
+select ps.category,
+sum(oi.quantity*oi.unit_price) as Revenue
+from orders o
+inner join order_items oi
+on o.order_id = oi.order_id
+inner join products ps
+on oi.product_id = ps.product_id
+inner join payments py
+on oi.order_id = py.order_id
+where py.payment_status = "Success"
+group by ps.category
+order by Revenue desc;
