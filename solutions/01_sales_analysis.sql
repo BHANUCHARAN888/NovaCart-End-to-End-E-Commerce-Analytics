@@ -84,3 +84,66 @@ inner join payments py
 on o.order_id = py.order_id
 where payment_status = "Success"
 group by Month, ps.category;
+-- Business Q5: What is the Average Order Value (AOV) across different months?
+select 
+date_format(o.order_date,"%Y-%m") as Month_wise,
+ROUND(
+    SUM(oi.quantity * oi.unit_price) /
+    COUNT(DISTINCT o.order_id),
+    2
+) AS Average_Order_Value
+from orders o
+inner join order_items oi
+on o.order_id = oi.order_id
+inner join payments p
+on o.order_id = p.order_id
+where payment_status = "Success"
+group by Month_wise
+order by Month_wise;
+-- Business Q6: Which months require additional marketing efforts to improve sales performance?
+select date_format(o.order_date,'%Y-%m') as month,
+sum(oi.quantity*oi.unit_price) as Revenue
+from orders o
+inner join order_items oi
+on o.order_id = oi.order_id
+inner join payments p
+on o.order_id = p.order_id
+where payment_status = "Success"
+group by date_format(o.order_date,'%Y-%m')
+order by Revenue asc;
+-- Business Q7: YoY (year over year comparision)
+select date_format(o.order_date,'%m') as month,
+sum(
+case 
+when year(o.order_date) = 2024
+then oi.quantity * oi.unit_price
+end
+) as 2024_Revenue,
+sum(
+case 
+when year(o.order_date) = 2025
+then oi.quantity * oi.unit_price
+end
+) as 2025_Revenue
+from orders o
+inner join order_items oi
+on o.order_id = oi.order_id
+inner join payments p
+on o.order_id = p.order_id
+where payment_status = "Success"
+group by month
+order by month;
+-- Business Q8: Seasonal Sales Patterns
+select monthname(o.order_date) as Month,
+sum(oi.quantity*oi.unit_price) as Revenue
+from orders o
+inner join order_items oi
+on o.order_id = oi.order_id
+inner join payments p
+on o.order_id = p.order_id
+where payment_status = "Success"
+GROUP BY
+    MONTH(o.order_date),
+    MONTHNAME(o.order_date)
+ORDER BY
+    MONTH(o.order_date);
