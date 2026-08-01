@@ -148,3 +148,21 @@ CASE
 END AS Sales_Trend
 from monthly_trend
 order by Product, Month;
+-- Business Q7: Which products have the highest average order quantity per purchase?
+select pr.product_name as Product,
+sum(oi.quantity) as Total_unit_sold,
+count(distinct o.order_id) as Total_orders,
+ROUND(
+    SUM(oi.quantity) / COUNT(DISTINCT o.order_id),
+    2
+) AS Avg_Order_Quantity
+from orders o
+inner join order_items oi 
+on o.order_id = oi.order_id
+inner join products pr 
+on pr.product_id = oi.product_id 
+inner join payments p 
+on p.order_id = o.order_id 
+where p.payment_status = "Success"
+group by pr.product_name
+order by Avg_Order_Quantity;
