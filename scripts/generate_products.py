@@ -2,11 +2,6 @@ import random
 from db_connection import connection, cursor
 
 # -----------------------------
-# Configuration
-# -----------------------------
-NUM_PRODUCTS = 100
-
-# -----------------------------
 # Product Catalog
 # -----------------------------
 
@@ -99,34 +94,35 @@ product_catalog = {
 query = """
 INSERT INTO products
 (product_name, category, brand, unit_price, stock_quantity)
-VALUES (%s,%s,%s,%s,%s)
+VALUES (%s, %s, %s, %s, %s)
 """
 
 products = []
 
-while len(products) < NUM_PRODUCTS:
+# -----------------------------
+# Generate Unique Products
+# -----------------------------
 
-    category = random.choice(list(product_catalog.keys()))
+for category, brands in product_catalog.items():
+    for brand, product_list in brands.items():
+        for product in product_list:
 
-    brand = random.choice(list(product_catalog[category].keys()))
+            product_name = product[0]
+            min_price = product[1]
+            max_price = product[2]
 
-    product = random.choice(product_catalog[category][brand])
+            unit_price = round(random.uniform(min_price, max_price), 2)
+            stock_quantity = random.randint(20, 500)
 
-    product_name = product[0]
-
-    unit_price = round(random.uniform(product[1], product[2]), 2)
-
-    stock_quantity = random.randint(20, 500)
-
-    products.append(
-        (
-            product_name,
-            category,
-            brand,
-            unit_price,
-            stock_quantity
-        )
-    )
+            products.append(
+                (
+                    product_name,
+                    category,
+                    brand,
+                    unit_price,
+                    stock_quantity
+                )
+            )
 
 # -----------------------------
 # Insert Data
@@ -136,8 +132,7 @@ cursor.executemany(query, products)
 
 connection.commit()
 
-print(f"✅ {cursor.rowcount} products inserted successfully!")
+print(f"✅ {len(products)} unique products inserted successfully!")
 
 cursor.close()
-
 connection.close()
