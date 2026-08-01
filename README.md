@@ -61,10 +61,10 @@ Analyze sales, customers, products, and payments to identify trends, measure bus
 
 ## 🚀 Project Roadmap
 
-* [ ] Phase 1 – Business Understanding
-* [ ] Phase 2 – Database Design
-* [ ] Phase 3 – Database Creation
-* [ ] Phase 4 – Data Population
+* [x] Phase 1 – Business Understanding
+* [x] Phase 2 – Database Design
+* [x] Phase 3 – Database Creation
+* [x] Phase 4 – Data Population
 * [ ] Phase 5 – SQL Business Analysis
 * [ ] Phase 6 – Business Insights
 * [ ] Phase 7 – Documentation & GitHub Showcase
