@@ -1,98 +1,39 @@
-# SQL Business Case Study – E-Commerce Sales Analytics
+# NovaCart — End-to-End E-Commerce Analytics
+
+An end-to-end e-commerce analytics project combining **MySQL business analysis** with an interactive **Power BI reporting suite**.
+
+## 🔗 Portfolio Case Study
+
+**[View the Full NovaCart Case Study →](YOUR_PORTFOLIO_URL)**
+
+The portfolio case study presents the complete journey from business requirements and SQL analysis to Power BI dashboards, insights, and business recommendations.
 
 ## 📌 Project Overview
 
-This project simulates a real-world business case where a Data Analyst analyzes an e-commerce company's database to answer key business questions using SQL.
+NovaCart was built to analyze key areas of e-commerce performance:
 
-The goal is to transform raw business data into actionable insights that help stakeholders make data-driven decisions.
+- Sales & revenue
+- Customer behavior
+- Product & category performance
+- Payment performance
 
----
+**Workflow:**
 
-## 🎯 Business Objective
-
-Analyze sales, customers, products, and payments to identify trends, measure business performance, and provide recommendations for business growth.
-
----
-
-## 👥 Stakeholders
-
-* CEO
-* Sales Manager
-* Marketing Team
-* Finance Team
-* Inventory Team
-
----
-
-## 📊 Key Business KPIs
-
-* Total Revenue
-* Total Orders
-* Average Order Value (AOV)
-* Monthly Revenue Trend
-* Revenue by Category
-* Top Customers
-* Best Selling Products
-* Customer Retention Rate
-* Payment Success Rate
-
----
-
-## ❓ Business Questions
-
-* How much revenue has the company generated?
-* Which months generate the highest sales?
-* Which products contribute the most revenue?
-* Who are the top customers by revenue?
-* Which product categories perform the best?
-* What is the average order value?
-* Which payment methods are used the most?
-* How many customers make repeat purchases?
-
----
+`Business Requirements → SQL Analysis → Insights → Power BI Dashboard`
 
 ## 🛠️ Tech Stack
 
-* SQL
-* MySQL
-* Visual Studio Code
+- **MySQL** — Database & business analysis
+- **Power BI** — Interactive dashboards
+- **DAX** — KPIs & analytical measures
+- **Python** — Dataset generation
 
----
-
-## 🚀 Project Roadmap
-
-* [x] Phase 1 – Business Understanding
-* [x] Phase 2 – Database Design
-* [x] Phase 3 – Database Creation
-* [x] Phase 4 – Data Population
-* [x] Phase 5 – SQL Business Analysis
-* [x] Phase 6 – Business Insights
-* [x] Phase 7 – Documentation & GitHub Showcase
-* [x] Phase 8 – Power BI Dashboard
-
----
-
-## 📂 Repository Structure
+## 📂 Project Structure
 
 ```text
-SQL_Business_Case_Study/
-│
-├── README.md
-├── business_requirements.md
-├── database/
-├── queries/
-├── insights/
-└── assets/
-```
-
----
-
-## 🎯 Expected Outcome
-
-By completing this project, I will demonstrate the ability to:
-
-* Analyze real-world business data using SQL.
-* Write efficient SQL queries using Joins, CTEs, Window Functions, and Ranking.
-* Calculate key business KPIs.
-* Translate SQL results into business insights.
-* Present findings in a professional portfolio project.
+database/                 → Database schema & setup
+SQL_Business_Case_Study/  → SQL business analysis
+PowerBI_Analytics/        → Power BI report & screenshots
+reports/                  → Business insights & reports
+scripts/                  → Supporting scripts
+business_requirements.md  → Business requirements
