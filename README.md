@@ -68,7 +68,7 @@ Analyze sales, customers, products, and payments to identify trends, measure bus
 * [x] Phase 5 – SQL Business Analysis
 * [x] Phase 6 – Business Insights
 * [x] Phase 7 – Documentation & GitHub Showcase
-* [ ] Phase 8 – Power BI Dashboard (Optional)
+* [x] Phase 8 – Power BI Dashboard
 
 ---
 
