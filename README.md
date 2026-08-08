@@ -4,7 +4,7 @@ An end-to-end e-commerce analytics project combining **MySQL business analysis**
 
 ## 🔗 Portfolio Case Study
 
-**[View the Full NovaCart Case Study →](YOUR_PORTFOLIO_URL)**
+**[View the Full NovaCart Case Study →](https://bhanucharan888.github.io/NovaCart-End-to-End-E-Commerce-Analytics/)**
 
 The portfolio case study presents the complete journey from business requirements and SQL analysis to Power BI dashboards, insights, and business recommendations.
 
