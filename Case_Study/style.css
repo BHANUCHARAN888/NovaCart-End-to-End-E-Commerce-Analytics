@@ -3991,3 +3991,60 @@ body {
     }
 
 }
+/* =====================================
+   DAX MEASURE SCREENSHOT
+====================================== */
+
+.dax-screenshot-wrap {
+    width: 100%;
+    margin-top: 45px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: #080a0d;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.30);
+}
+
+.dax-screenshot {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    opacity: 0.92;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dax-screenshot-wrap:hover .dax-screenshot {
+    opacity: 1;
+
+    transform: scale(1.01);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .dax-screenshot-wrap {
+        margin-top: 30px;
+
+        overflow-x: auto;
+    }
+
+    .dax-screenshot {
+        width: 850px;
+
+        max-width: none;
+    }
+
+}
